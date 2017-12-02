@@ -1,0 +1,405 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen+Mono);
+/* Starter CSS for Menu */
+
+
+body{
+
+margin:0px;
+padding:0px;
+background:#3a3a3a;
+}
+
+#cssmenu {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1050;
+}
+#cssmenu ul,
+#cssmenu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu ul {
+  position: relative; 
+  z-index: 597;
+}
+#cssmenu ul li {
+  float: left;
+  min-height: 1px;
+  vertical-align: middle;
+}
+#cssmenu ul li.hover,
+#cssmenu ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
+#cssmenu ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 598;
+  width: 100%;
+}
+#cssmenu ul ul li {
+  float: none;
+}
+#cssmenu ul ul ul {
+  top: 0;
+  left: 190px;
+  width: 190px;
+}
+#cssmenu ul li:hover > ul {
+  visibility: visible;
+}
+#cssmenu ul ul {
+  bottom: 0;
+  left: 0;
+}
+#cssmenu ul ul {
+  margin-top: 0;
+}
+#cssmenu ul ul li {
+  font-weight: normal;
+}
+#cssmenu a {
+  display: block;
+  line-height: 1em;
+  text-decoration: none;
+}
+/* Custom CSS Styles */
+#cssmenu {
+  background: #333333;
+  border-bottom: 4px solid #1b9bff;
+  font-family: 'Oxygen Mono', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+}
+#cssmenu > ul {
+  *display: inline-block;
+}
+#cssmenu:after,
+#cssmenu ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#cssmenu ul {
+  text-transform: uppercase;
+}
+#cssmenu ul ul {
+  border-top: 4px solid #1b9bff;
+  text-transform: none;
+  min-width: 190px;
+}
+#cssmenu ul ul a {
+  background: #1b9bff;
+  color: #ffffff;
+  border: 1px solid #0082e7;
+  border-top: 0 none;
+  line-height: 150%;
+  padding: 16px 20px;
+  font-size: 12px;
+}
+#cssmenu ul ul ul {
+  border-top: 0 none;
+}
+#cssmenu ul ul li {
+  position: relative;
+}
+#cssmenu ul ul li:first-child > a {
+  border-top: 1px solid #0082e7;
+}
+#cssmenu ul ul li:hover > a {
+  background: #4eb1ff;
+  color: #ffffff;
+}
+#cssmenu ul ul li:last-child > a {
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -moz-box-shadow: 0 1px 0 #1b9bff;
+  -webkit-box-shadow: 0 1px 0 #1b9bff;
+  box-shadow: 0 1px 0 #1b9bff;
+}
+#cssmenu ul ul li:last-child:hover > a {
+  -moz-border-radius: 0 0 0 3px;
+  -webkit-border-radius: 0 0 0 3px;
+  border-radius: 0 0 0 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#cssmenu ul ul li.has-sub > a:after {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -8px;
+}
+
+
+#cssmenu ul li:hover > a,
+#cssmenu ul li.active > a {
+  background: #1b9bff;
+  color: #ffffff;
+}
+#cssmenu ul li.has-sub > a:after {
+  content: '+';
+  margin-left: 5px;
+}
+#cssmenu ul li.last ul {
+  left: auto;
+  right: 0;
+}
+#cssmenu ul li.last ul ul {
+  left: auto;
+  right: 99.5%;
+}
+#cssmenu a {
+  background: #333333;
+  color: #CBCBCB;
+  padding: 0 20px;
+}
+#cssmenu > ul > li > a {
+  line-height: 48px;
+  font-size: 12px;
+}
+.resizable { width: 150px; height: 150px; padding: 0.5em; }
+.resizable h3 { text-align: center; margin: 0; }
+.draggable { width:auto!important; height:100%; margin:5px;}
+
+.clearfix {
+    clear: both;
+}
+.chart-block {
+    margin-bottom: 10px;
+}
+.chart-block h1 {
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+    background: #9467bd;
+    padding: 10px;
+    cursor: move;
+}
+.chart-block h1 span {
+    padding-left: 10px;
+    right: 5px;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+.container-row {
+    width: 100%;
+}
+.container-row-inner {
+    width: 100%;
+    border-bottom: 1px dotted #000000;
+    padding-top: 10px;
+}
+.top-menu-row {
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #000000;
+}
+.current-filters {
+    font-size: 12px;
+    padding-bottom: 10px;
+    color: #1f77b4;
+    font-weight: bold;
+    word-wrap: break-word;
+    width: 250px;
+}
+.filter-block {
+    height: 40px;
+}
+.filter-block .left-block {
+    float: left;
+    text-align: left;
+    padding-left: 10px;
+    line-height: 30px;
+}
+.filter-block .right-block {
+    float: right;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 30px;
+}
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  opacity: 0.7;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+
+#loading-image {
+  position: absolute;
+  top: 46%;
+  left: 46%;
+  z-index: 100;
+}
+.chart-block-small {
+    width: 450px;
+}
+.reset-all-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1501;
+}
+.dc-chart g.row text {
+    fill: #424242;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.dc-chart .pie-slice {
+    fill: #424242;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: bold;
+}
+ #panel, #flip {
+    padding:0px;
+    text-align: center;
+    background-color: none;
+ }
+#flip img {
+    margin-top:-0.7px;	
+}
+#panel {
+    padding:10px;
+	display: none; 
+ background: #dbdbdb;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dbdbdb));
+   background: -webkit-linear-gradient(top, #ffffff, #dbdbdb);
+   background: -moz-linear-gradient(top, #ffffff, #dbdbdb);
+   background: -ms-linear-gradient(top, #ffffff, #dbdbdb);
+   background: -o-linear-gradient(top, #ffffff, #dbdbdb);
+}
+
+
+.age {  margin-left:20px; background:url(../images/Age_Off.png);   width:74px; height:74px; border:none;}
+.age:hover { background:url(../images/Age_On.png);   width:74px; height:74px; border:none;}
+.age-active { margin-left:20px;background:url(../images/Age_On.png);   width:74px; height:74px; border:none;}
+
+.gender {   margin-left:20px; background:url(../images/Gender_Off.png);  width:74px; height:74px; border:none;}
+.gender:hover { background:url(../images/Gender_On.png);  width:74px; height:74px; border:none;}
+.gender-active {margin-left:20px; background:url(../images/Gender_On.png);  width:74px; height:74px; border:none;}
+
+
+.income { margin-left:20px; background:url(../images/Income_Off.png); width:74px; height:74px; border:none;}
+.income:hover { background:url(../images/Income_On.png); width:74px; height:74px; border:none;}
+.income-active { margin-left:20px;background:url(../images/Income_On.png); width:74px; height:74px; border:none;}
+
+
+.product { margin-left:20px; background:url(../images/Product_Off.png);  width:74px; height:74px; border:none;}
+.product:hover { background:url(../images/Product_On.png); width:74px; height:74px; border:none;}
+.product-active {  margin-left:20px;background:url(../images/Product_On.png); width:74px; height:74px; border:none;}
+
+
+	
+.style1 {
+	color: #0000FF;
+	font-size: 12px;
+}
+.style4 {color: #99FF00;}
+.style5 {color: #FFFF00;}
+.divHeader{
+	vertical-align:middle;
+	height:40px;
+	padding:5px;
+	background:#1b9bff;
+	color:#ffffff;
+	font-family:century gothic;
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.divHeader span {
+	float:right;
+	background:transparent;
+	margin-left: 5px;
+	border: 1px solid #cccccc;
+	padding: 2px;
+	font-size: 15px;
+}
+.col-md-3, .col-md-6 {
+    padding: 0 !important;
+}
+.col-md-6 {
+    width: auto!important;
+}
+.ui-widget-content {
+    background: #E4E4E4 !important;
+}
+.container-row-inner-column {
+    text-align: center;
+    background: #E4E4E4;
+}
+.dc-chart .deselected path {
+    stroke: #CCEBFF;
+}
+.dc-chart .grid-line {
+fill: none;
+stroke: #A4A4A4;
+opacity: .5;
+shape-rendering: crispEdges;
+}
+.dc-chart .grid-line line {
+fill: none;
+stroke: #A4A4A4;
+opacity: .5;
+shape-rendering: crispEdges;
+}
+#pie-chart-for-marital-status svg {
+	width: 400px;
+}
+#pie-chart-for-employment-type svg {
+	width: 400px;
+}
+#pie-chart-for-age svg {
+	width: 400px;
+}
+
+#pie-chart-for-income-group svg{
+    	width: 430px;
+}
+
+#pie-chart-for-global-account-type svg{
+    	width: 400px;
+}
+
+#line-chart-for-acc-open-date svg{
+    	width: 900px;
+}
+
+#line-chart-for-scheduled-termination-date svg{
+    	width: 900px;
+}
+
+#line-chart-for-closure-date svg {
+    	width: 900px;
+}

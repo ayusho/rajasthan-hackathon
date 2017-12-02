@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang=''>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/dc.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="sidebar/mbExtruder.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <script language="JavaScript" type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="sidebar/jquery.mb.flipText.js"></script>
+    <script type="text/javascript" src="sidebar/mbExtruder.js"></script>
+    <script type="text/javascript" src="js/d3.js"></script>
+    <script type="text/javascript" src="js/crossfilter.js"></script>
+    <script type="text/javascript" src="js/dc.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/script.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/analytics-botify.js"></script>
+    <title>Analytics </title>
+</head>
+
+<body>
+    <div id="extruderRight" class="{title:'Our network on the right'}">Recently Closed Charts</div>
+    <div id="loading"> <img id="loading-image" src="images/ajax-loader.gif" alt="Loading..." /> </div>
+    <div id="cssmenu">
+        <button type="button" class="btn btn-default btn-sm reset-all-button" onclick="resetAll();"> <span class="glyphicon glyphicon-refresh"></span> Reset All Filters </button>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div style="">
+        <div id="contain" style=" height:100%; position:relative;">
+            <div style="float:left; margin:5px;" class="ui-widget-content selector col-md-6" id="lcp-account-opening-date-linechart-id">
+                <div id="lcp-account-opening-date-linechart" class="chart-block">
+                    <div class="divHeader"> Session Timeline <a class="reset" onclick="resetChart('lcp-account-opening-date-linechart');" style="display: none;"><i class="fa fa-refresh"></i> Reset Current Filters</a> </div>
+                </div>
+            </div>
+            <div style="float:left;" class="ui-widget-content selector draggable col-md-6" id="row-bar-chart-for-product-id">
+                <div id="row-chart-for-product-type" class="chart-block">
+                    <div class="divHeader"> Day-wise Dialog Frequency <a class="reset" onclick="resetChart('row-chart-for-product-type');" style="display: none;"><i class="fa fa-refresh"></i> Reset Current Filters</a> </div>
+                </div>
+            </div>
+            <div style="float:left;" class="ui-widget-content selector draggable col-md-3" id="pie-chart-for-age-id">
+                <div class="container-row-inner-column">
+                    <div id="pie-chart-for-age" class="chart-block  chart-block-small">
+                        <div class="divHeader">Month-wise Dialog Frequency</div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="filter-block">
+                        <div class="left-block">
+                            <div id="pie-chart-for-age-current-filters" class="current-filters" style="display: none;"></div>
+                        </div>
+                        <div class="right-block">
+                            <a type="button" class="btn btn-default btn-sm reset" onclick="resetChart('pie-chart-for-age');" id="pie-chart-for-age-reset-link" style="display: none;"> <span class="glyphicon glyphicon-refresh"></span> Reset Current Filters </a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="float:left;" class="ui-widget-content selector data-table-div" id="smf-data-chart-id">
+                <div id="smf-data-chart-div-id" class="chart-block">
+                    <div class="divHeader"> Raw Data View&nbsp;<a style="color:#fff;" href="#myModal8" data-toggle="modal" data-target="#myModal8"><i class="fa fa-info-circle"></i></a> </div>
+                </div>
+                <div id="smf-data-table" class="list table table-striped table-hover table-bordered dc-data-table"> </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.divHeader').prepend('<div style="float:right" ><button type="button" class="btn btn-default btn-xs chart_close"><i class="fa fa-times"></i></button></div>');
+        $(".chart_close").click(function () {
+            var id = $(this).closest('.ui-widget-content').attr('id');
+            var text = $(this).closest('.divHeader').html();
+            var text = text.split('</div>');
+            $("#" + id).slideToggle();
+            $(".extruder-content").append('<div class="text"><a style="cursor:pointer" onclick="$(this).parent().slideToggle(); $(\'#' + id + '\').slideToggle();">' + text[1] + '</a></div>');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../public/stylesheets/dashboard.css">
+    <script src="../dashboard/jquery.js"></script>
+    <script src="../dashboard/dashboard.js"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <input id="analytics" type="button" value="Analytics" style="flex:1">
+        <input id="details" type="button" value="Add details" style="flex:1"> </div>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <div class="container">
+        <div>
+            <input type="text" id="infusion" name="infusion" placeholder="IV infusion name">
+            <input type="text" id="volume" name="volume" placeholder="Volume">
+            <input type="text" id="alertVolume" name="alertvolume" placeholder="Alert volume">
+            <input type="button" id="btn-submit" value="Submit"> </div>
+    </div>
+    <script src="../dashboard/canvasjs.min.js"></script>
+</body>
+
+</html>

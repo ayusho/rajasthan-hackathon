@@ -1,0 +1,154 @@
+doctype html
+html
+  head
+    style.
+      body {
+      background-color: cornflowerblue;
+      }
+      h1 {
+      color: maroon;
+      margin-left: 40px;
+      }
+      .menu {
+      display: flex;
+      margin-right: 20px;
+      }
+      input[type=button] {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 20px;
+      cursor: pointer;
+      }
+      input[type=text],
+      select,
+      textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+      }
+      input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin: 100px;
+      }
+    |     
+    script.
+      window.onload = function () {
+      var chart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true
+      , theme: "light2"
+      , title: {
+      text: "Simple Line Chart"
+      }
+      , axisY: {
+      includeZero: false
+      }
+      , data: [{
+      type: "line"
+      , dataPoints: [
+      {
+      y: 450
+      }
+      , {
+      y: 414
+      }
+      , {
+      y: 520
+      , indexLabel: "highest"
+      , markerColor: "red"
+      , markerType: "triangle"
+      }
+      , {
+      y: 460
+      }
+      , {
+      y: 450
+      }
+      , {
+      y: 500
+      }
+      , {
+      y: 480
+      }
+      , {
+      y: 480
+      }
+      , {
+      y: 410
+      , indexLabel: "lowest"
+      , markerColor: "DarkSlateGrey"
+      , markerType: "cross"
+      }
+      , {
+      y: 500
+      }
+      , {
+      y: 480
+      }
+      , {
+      y: 510
+      }
+      ]
+      }]
+      });
+      chart.render();
+      callApi('sendtData', function (d) {
+      console.log(d);
+      });
+      }
+      function callApi(ApiName, data, callback) {
+      $.ajax({
+      type: "GET"
+      , dataType: "json"
+      , cache: false
+      , data: data
+      , url: "http://localhost/index/" + ApiName
+      , complete: function (d) {
+      var res = jQuery.parseJSON(d.responseText);
+      callback(res);
+      }
+      });
+      }
+  body
+    .menu
+      input#analytics(type='button', value='Analytics', style='flex:1')
+      |         
+      input#details(type='button', value='Add details', style='flex:1')
+    |     
+    #chartContainer(style='height: 370px; width: 100%;')
+    |     
+    .container
+      form
+        input#infusion(type='text', name='infusion', placeholder='IV infusion name')
+        |             
+        input#volume(type='text', name='volume', placeholder='Volume')
+        |             
+        input#alertVolume(type='text', name='alertvolume', placeholder='Alert volume')
+        |             
+        input(type='submit', value='Submit')
+    |     
+    script(src='../dashboard/canvasjs.min.js')
